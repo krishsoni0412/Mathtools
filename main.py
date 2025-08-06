@@ -10,7 +10,10 @@ print("8. Lcm and Hcf calculator")
 print("9. Random password generator")
 print("10. Fibonacci series")
 print("11. Rock Paper Scissors")
-print("12 . Number guessing game\n")
+print("12. Number guessing game")
+print("13. Find countries with starting letter")
+print("14. Pythagorous finder")
+print("15. Trignometry Calc\n")
 
 operation = int(input("Enter your operation number: "))
 
@@ -129,7 +132,7 @@ if operation == 8:
     hcf1 = int(input("enter your first number : "))
     hcf2 = int(input("enter your second number : "))
     hcf3 = print(f"your lcm will be {lcm(hcf1, hcf2)} and hcf will be {hcf(hcf1, hcf2)}")
-        
+
 
 if operation == 9:
     pass1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -221,19 +224,200 @@ if operation == 12:
             else:
                 print("your number is between 26-50")
 
+if operation == 13:
+    country = input("enter your first lettter: ").upper()
+    countries = [
+        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina",
+        "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+        "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+        "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
+        "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
+        "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti",
+        "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
+        "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia",
+        "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau",
+        "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq",
+        "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya",
+        "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
+        "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives",
+        "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia",
+        "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia",
+        "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea",
+        "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea",
+        "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+        "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa",
+        "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
+        "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa",
+        "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland",
+        "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga",
+        "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine",
+        "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu",
+        "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+    ]
+    for i in range(len(countries)):
+        country1 = str(countries[i])
+        list(country1)
+        if country == country1[0]:
+            print(country1)
+
+if operation == 14:
+    print("pythagorous finder")
+    pytha = input("what do you want to find (height, base, hypotenuse) : ").lower()
+    if pytha == "height":
+        base = float(input("enter length of base : "))
+        hypo = float(input("enter length of hypotenuse : "))
+        height = (hypo ** 2) -  (base ** 2)
+        print(f"The length of height will be {height ** 0.5}")
+    if pytha == "base":
+        height = float(input("enter length of height : "))
+        hypo = float(input("enter length of hypotenuse : "))
+        base = (hypo ** 2) - (height ** 2)
+        print(f"The length of base will be {base ** 0.5}")
+    if pytha == "hypotenuse":
+        base = float(input("enter length of base : "))
+        height = float(input("enter length of height : "))
+        hypo = (base ** 2) + (height ** 2)
+        print(f"The length of hypotenuse will be {hypo ** 0.5}")
+
+if operation == 15:
+    import math
+    print("Welcome to Trigonometry")
+    print("""
+        A
+        |\\
+        | \\
+        |  \\
+        |   \\
+        |    \\
+        |     \\
+        |______\\ C
+        B
+    """)
+
+    trig = input("enter what you wanna find(opposite , adjacent , hypotenuse) : ").lower()
+    trig1 = input("which angle measurement you have(ANGLE A OR ANGLE C) : ").upper()
+    trig2 = input("which length you have alredy(opposite, adjacent, hypotenuse): ").lower()
+    if trig == trig2:
+        print("you can't find same things bruh")
+        exit()
+
+    if trig == "opposite":
+        
+        if trig1 == "A":
+            if trig2 == "adjacent":
+                adja = float(input("enter the length of adjacent : "))
+                angle = int(input(f"enter the angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.tan(rad)
+                rad2 = rad1 * adja
+                print(f"The length of opposite side will be {rad2:.2f}")
+
+            if trig2 == "hypotenuse":
+                hypo = float(input("enter the length of hypotenuse"))
+                angle = int(input(f"enter the Angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.sin(rad)
+                rad2 = rad1 * hypo
+                print(f"The length of opposite side will be {rad2:.2f}")
+
+        if trig1 == "C":
+            if trig2 == "adjacent":
+                adja = float(input("enter the length of adjacent : "))
+                angle = int(input(f"enter the Angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.tan(rad)
+                rad2 = rad1 * adja
+                print(f"The length of opposite side will be {rad2:.2f}")
+
+            if trig2 == "hypotenuse":
+                hypo = float(input("enter the length of hypotenuse"))
+                angle = int(input(f"enter the Angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.sin(rad)
+                rad2 = rad1 * hypo
+                print(f"The length of opposite side will be {rad2:.2f}")
+
+    if trig == "adjacent":
+        if trig1 == "A" or trig1 == "C":
+            if trig2 == "opposite":
+                opp = float(input("enter the length of opposite"))
+                angle = int(input(f"enter the Angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.tan(rad)
+                rad2 = opp / rad1
+                print(f"The length of adjacent side will be {rad2:.2f}")
+
+            if trig2 == "hypotenuse":
+                hypo = float(input("enter the length of hypotenuse"))
+                angle = int(input(f"enter the Angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.cos(rad)
+                rad2 = rad1 * hypo
+                print(f"The length of adjacent side will be {rad2:.2f}")
+
+    if trig == "hypotenuse":
+        if trig1 == "A" or trig1 == "C":
+            if trig2 == "opposite":
+                opp = float(input("enter the length of opposite"))
+                angle = int(input(f"enter the Angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.sin(rad)
+                rad2 = opp / rad1
+                print(f"The length of hypotenuse side will be {rad2:.2f}")
+
+            if trig2 == "adjacent":
+                adja = float(input("enter the length of adjacent : "))
+                angle = int(input(f"enter the Angle of {trig1} : "))
+                rad = math.radians(angle)
+                rad1 = math.cos(rad)
+                rad2 = adja / rad1
+                print(f"The length of hypotenuse side will be {rad2:.2f}")
+                
+                
+                
+                
+        
+                
+
+            
+                
+                
+                
+                
+            
+            
+        
+           
+                
+                
+                
+                
+                
+
+
+
+           # height = float(input("enter the length of adjacent"))
+          #  hypo = float(input("enter the length of hypotenuse"))
+        # angle = int(input(f"enter the length of Angle {trig1}"))
 
         
-    
-        
-    
-    
-        
-    
-    
-            
 
-            
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
