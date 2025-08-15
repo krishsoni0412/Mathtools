@@ -1,3 +1,13 @@
+import math
+import os
+import time
+import random
+
+def clear_console():
+    
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("Welcome to Basic Tools made by Krish Soni\n")
+    
 print("Welcome to Basic Tools made by Krish Soni\n")
 print("1. Calculator")
 print("2. Prime Number Checker")
@@ -13,9 +23,19 @@ print("11. Rock Paper Scissors")
 print("12. Number guessing game")
 print("13. Find countries with starting letter")
 print("14. Pythagorous finder")
-print("15. Trignometry Calc\n")
+print("15. Trignometry Calc")
+print("16. next page\n")
+
+
+
+
 
 operation = int(input("Enter your operation number: "))
+
+if operation == 16:
+    clear_console()
+    print("17. mensuration\n")
+    operation = int(input("Enter your operation number: "))
 
 if operation == 1:
     print("\nWelcome to Basic Calculator")
@@ -164,7 +184,7 @@ if operation == 10:
 if operation == 11:
     import random
     print("welcome to rock paper scissors")
-    rock1 = input("enter your choice rock,paper or scissors : ").lower()
+    rock1 = input("enter your choice rock, paper or scissors : ").lower()
     rock2 = random.randint(1,3)
     if rock1 == "rock":
         rocky = 1
@@ -200,8 +220,10 @@ if operation == 12:
     import random
     rand3 = 0
     print("Welcome to Number guessing game you have to choose a random number between 1 to 50")
+    rand1 = random.randint(1, 50)
     while True:
-        rand1 = random.randint(1, 50)
+        
+        
         rand2 = input("Enter your guess : ")
         rand3 = rand3 + 1
         if rand2 != rand1:
@@ -221,8 +243,13 @@ if operation == 12:
             for i in range(1, 26):
                 if i == rand1:
                     print("your number is between 1 to 25")
+                    break
             else:
                 print("your number is between 26-50")
+                
+                    
+                    
+                
 
 if operation == 13:
     country = input("enter your first lettter: ").upper()
@@ -243,7 +270,7 @@ if operation == 13:
         "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia",
         "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia",
         "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea",
-        "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea",
+        "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine(no exist)", "Panama", "Papua New Guinea",
         "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
         "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa",
         "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
@@ -310,15 +337,34 @@ if operation == 15:
                 rad = math.radians(angle)
                 rad1 = math.tan(rad)
                 rad2 = rad1 * adja
-                print(f"The length of opposite side will be {rad2:.2f}")
-
+                print(f"""
+                    A
+                    |\\
+                    | \\
+                    |  \\
+                    |   \\
+                    |    \\
+                    |     \\
+                    |______\\ C
+                    B {rad2:.2f}
+                """)
             if trig2 == "hypotenuse":
                 hypo = float(input("enter the length of hypotenuse"))
                 angle = int(input(f"enter the Angle of {trig1} : "))
                 rad = math.radians(angle)
                 rad1 = math.sin(rad)
                 rad2 = rad1 * hypo
-                print(f"The length of opposite side will be {rad2:.2f}")
+                print(f"""
+                A
+                |\\
+                | \\
+                |  \\
+                |   \\
+                |    \\
+                |     \\
+                |______\\ C
+                B {rad2:.2f}
+                """)
 
         if trig1 == "C":
             if trig2 == "adjacent":
@@ -327,7 +373,19 @@ if operation == 15:
                 rad = math.radians(angle)
                 rad1 = math.tan(rad)
                 rad2 = rad1 * adja
-                print(f"The length of opposite side will be {rad2:.2f}")
+                print(fr"""
+                            A
+                            |\
+                            | \
+                {rad2:.2f}       |  \
+                            |   \
+                            |    \
+                            |     \
+                            |______\ C
+                            B """)
+
+        
+                    
 
             if trig2 == "hypotenuse":
                 hypo = float(input("enter the length of hypotenuse"))
@@ -372,6 +430,85 @@ if operation == 15:
                 rad1 = math.cos(rad)
                 rad2 = adja / rad1
                 print(f"The length of hypotenuse side will be {rad2:.2f}")
+
+if operation == 17:
+    print("welcome to mensuration calc")
+    print("enter the shape you want to choose")
+    print("""
+             1. square
+             2. rectangle
+             3. triangle
+             4. circle
+             5. cuboid
+             6. cube
+             7. sphere
+             8. hemisphere
+             9. cone\n""")
+    shape = int(input("enter your choice : "))
+
+    if shape == 1:
+        sq = float(input("enter measurement of the side : "))
+        print(f"Area will be {sq ** 2} and perimetre will be {sq * 4}")
+
+    if shape == 2:
+        sq = float(input("enter measurement of length : "))
+        sq1 = float(input("enter measurement of breath : "))
+        print(f"Area will be {sq * sq1} and perimetre will be {(sq + sq1) * 2}")
+
+    if shape == 3:
+        print("""enter the method you want to choose
+                 1. normal method
+                 2. heron method\n""")
+        tri = int(input("enter your choice : "))
+        if tri == 1:
+            ba = float(input("enter measurement of the base : "))
+            height = float(input("enter measurement of height : "))
+            print(f"Area will be {(ba * height) / 2}")
+        if tri == 2:
+            a1 = float(input("enter measurement of side one : "))
+            a2 = float(input("enter measurement of side two : "))
+            a3 = float(input("enter measurement of side three : "))
+            s1 = (a1 + a2 + a3) / 2
+            s2 = s1 * (s1 - a1) * (s1 - a2) * (s1 - a3)
+            s3 = s2 ** 0.5
+            print(f"area will be {s3}")
+
+    if shape == 4:
+        rad = float(input("enter measurement of radius :  "))
+        print(f"Area will be {3.14 * (rad ** 2)} and perimetre will be {2 * rad * 3.14}")
+
+    if shape == 5:
+        length = float(input("enter measurement of length : "))
+        breath = float(input("enter measurement of breath : "))
+        height = float(input("enter measurement of height : "))
+        s1 = (length * breath) + (breath * height) + (length * height)
+        print(f"Area will be {s1 * 2}")
+
+    if shape == 6:
+        length = float(input("enter measurement of length : "))
+        print(f"Area will be {6 * (length ** 2)}")
+
+    if shape == 7:
+        rad = float(input("enter measurement of radius : "))
+        s1 = 3.14 * (rad ** 2)
+        print(f"Area will be {4 * s1}")
+
+    if shape == 8:
+        rad = float(input("enter measurement of radius : "))
+        s1 = 3.14 * (rad ** 2)
+        print(f"Area will be {3 * s1}")
+
+    if shape == 9:
+        rad = float(input("enter measurement of radius : "))
+        height = float(input("enter measurement of height : "))
+        length = ((rad ** 2) + (height ** 2)) ** 0.5
+        s1 = 3.14 * rad * (rad + length)
+        print(f"Area will be {s1.2f}")
+        
+        
+
+
+
                 
                 
                 
