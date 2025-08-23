@@ -9,33 +9,47 @@ def clear_console():
     print("Welcome to Basic Tools made by Krish Soni\n")
     
 print("Welcome to Basic Tools made by Krish Soni\n")
-print("1. Calculator")
-print("2. Prime Number Checker")
-print("3. Dice Roller")
-print("4. Stopwatch")
-print("5. All Factors Finder")
-print("6. Quadratic Equation Solver")
-print("7. Even or Odd Checker")
-print("8. Lcm and Hcf calculator")
-print("9. Random password generator")
-print("10. Fibonacci series")
-print("11. Rock Paper Scissors")
-print("12. Number guessing game")
-print("13. Find countries with starting letter")
-print("14. Pythagorous finder")
-print("15. Trignometry Calc")
-print("16. next page\n")
-
-
-
-
-
-operation = int(input("Enter your operation number: "))
-
-if operation == 16:
+menu_options = [
+    "1. Calculator",
+    "2. Prime Number Checker",
+    "3. Dice Roller",
+    "4. Stopwatch",
+    "5. All Factors Finder",
+    "6. Quadratic Equation Solver",
+    "7. Even or Odd Checker",
+    "8. Lcm and Hcf calculator",
+    "9. Random password generator",
+    "10. Fibonacci series",
+    "11. Rock Paper Scissors",
+    "12. Number guessing game",
+    "13. Find countries with starting letter",
+    "14. Pythagorous finder",
+    "15. Trignometry Calc",
+    "16. next page"
+    
+]
+def main():
     clear_console()
-    print("17. mensuration\n")
+    for i in menu_options:
+        print(i)
+        time.sleep(0.1)
+    global operation
     operation = int(input("Enter your operation number: "))
+    if operation == 16:
+        clear_console()
+        print("17. mensuration (area and perimetre)")
+        print("18. mensuration (volume)\n")
+        operation = int(input("Enter your operation number: "))
+
+main()
+
+
+
+
+
+
+
+
 
 if operation == 1:
     print("\nWelcome to Basic Calculator")
@@ -58,30 +72,41 @@ if operation == 1:
             else:
                 digit22 = int(digit2)
 
-        # Perform operations
+        
         if operation1 == "+":
             print(f"Result: {digit11 + digit22}")
+            
         elif operation1 == "-":
             print(f"result: {digit11 - digit22}")
+            
         elif operation1 == "*":
             print(f"result: {digit11 * digit22}")
+            
+            
         elif operation1 == "/":
             if digit22 == 0:
                 print("cannot divide by 0")
+                
             else:
                 result = digit11 / digit22
                 if nig == 1:
                     print(f"Result: {result:.2f}")
+                    
                 else:
                     print(f"Result: {result}")
         elif operation1 == "%":
             print(f"result: {digit11 % digit22}")
+            
         elif operation1 == "square":
             print(f"square: {digit11 ** 2}")
+            
         elif operation1 == "cube":
             print(f"cube: {digit11 ** 3}")
+            
         elif operation1 == "root":
             print(f"square root: {digit11 ** 0.5}")
+            
+            
     else:
         print("Invalid operation selected.")
 
@@ -90,6 +115,7 @@ if operation == 2:
     prime_check = int(input("enter your number: "))
     if prime_check < 2:
         print("your number is not prime")
+       
 
     for i in range(2, int(prime_check ** 0.5) + 1):
         if prime_check % i == 0:
@@ -97,12 +123,12 @@ if operation == 2:
             break
     else:
         print("your number is prime")
-
+        
 if operation == 3:
     import random
     random_roll = random.randint(1, 6)
     print(f"The dice has been rolled and the result is {random_roll}")
-
+  
 if operation == 4:
     import time
     time_input = int(input("enter countdowntime in seconds : "))
@@ -112,7 +138,7 @@ if operation == 4:
         time_input = time_input - 1
     if time_input == 0:
         print("your time has ended")
-
+       
 if operation == 5:
     factor_input = int(input("enter your number : "))
     list1 = []
@@ -121,6 +147,7 @@ if operation == 5:
         if factor_input % i == 0:
             list1.append(i)
     print(list1)
+   
 
 if operation == 6:
     print("enter the values for ax² + bx + c")
@@ -132,14 +159,17 @@ if operation == 6:
     equation6 = (-equationb + equation5) / (2 * equationa)
     equation7 = (-equationb - equation5) / (2 * equationa)
     print(f"The values for x will be {equation6:.2f} and {equation7:.2f}")
+   
 
 
 if operation == 7:
     evenorodd = int(input("enter your number: "))
     if evenorodd % 2 == 0:
         print("your number is even")
+        
     else:
         print("your number is odd")
+        
 
 if operation == 8:
     def hcf(a, b):
@@ -152,6 +182,7 @@ if operation == 8:
     hcf1 = int(input("enter your first number : "))
     hcf2 = int(input("enter your second number : "))
     hcf3 = print(f"your lcm will be {lcm(hcf1, hcf2)} and hcf will be {hcf(hcf1, hcf2)}")
+   
 
 
 if operation == 9:
@@ -169,6 +200,7 @@ if operation == 9:
     random.shuffle(pass7)
     pass9 = ''.join(pass7)
     print(pass9)
+   
 
 if operation == 10:
     list2 = []
@@ -180,6 +212,7 @@ if operation == 10:
         list2.append(f1)
 
     print(list2)
+  
 
 if operation == 11:
     import random
@@ -203,18 +236,25 @@ if operation == 11:
         print("I had choosen scissors")
     if rocky == rocky1:
         print("We have a tie")
+        
     if rocky == 1 and rocky1 == 3:
         print("YOU HAVE WON")
+        
     if rocky == 3 and rocky1 == 1:
         print("YOU HAVE LOST")
+       
     if rocky == 2 and rocky1 == 1:
         print("YOU HAVE LOST")
+        
     if rocky == 1 and rocky1 == 2:
         print("YOU HAVE LOST")
+      
     if rocky == 3 and rocky1 == 2:
         print("YOU HAVE WON")
+        
     if rocky == 2 and rocky == 3:
         print("YOU HAVE LOST")
+       
 
 if operation == 12:
     import random
@@ -243,7 +283,7 @@ if operation == 12:
             for i in range(1, 26):
                 if i == rand1:
                     print("your number is between 1 to 25")
-                    break
+                    
             else:
                 print("your number is between 26-50")
                 
@@ -497,14 +537,82 @@ if operation == 17:
         rad = float(input("enter measurement of radius : "))
         s1 = 3.14 * (rad ** 2)
         print(f"Area will be {3 * s1}")
+        
 
     if shape == 9:
         rad = float(input("enter measurement of radius : "))
         height = float(input("enter measurement of height : "))
         length = ((rad ** 2) + (height ** 2)) ** 0.5
         s1 = 3.14 * rad * (rad + length)
-        print(f"Area will be {s1.2f}")
+        print(f"Area will be {s1}")
+
+if operation == 18:
+    print("welcome to volume calc")
+    print("pls select the shape")
+    print("""
+          1. cube
+          2. cuboid
+          3. cylinder
+          4. cone
+          5. sphere
+          6. hemisphere
+          7. pyramid""")
+    shape = int(input("pls select the shape : "))
+    if shape == 1:
+        a = float(input("enter length of cube : "))
+        print(f"The volume will be {(a ** 3):.2f}")
         
+
+    if shape == 2:
+        a = float(input("enter length : "))
+        b = float(input("enter breath : "))
+        c = float(input("enter height : "))
+        print(f"The volume will be {(a * b * c):.2f}")
+
+    if shape == 3:
+        a = float(input("enter radius : "))
+        b = float(input("enter height : "))
+        c = a ** 2
+        print(f"The volume will be {(3.14 * c * b):.2f}")
+
+    if shape == 4:
+        a = float(input("enter radius : "))
+        b = float(input("enter height : "))
+        c = a ** 2
+        d = (3.14 * c * b)/3
+        print(f"The volume will be {d:.2f}")
+
+    if shape == 5:
+        a = float(input("enter radius : "))
+        b = a ** 3
+        c = (4 * 3.14 * b)/3
+        print(f"The volume will be {c:.2f}")
+
+    if shape == 6:
+        a = float(input("enter radius : "))
+        b = a ** 3
+        c = (2 * 3.14 * b)/3
+        print(f"The volume will be {c:.2f}")
+
+    if shape == 7:
+        a = float(input("enter base area : "))
+        b = float(input("enter height : "))
+        print(f"The volume will be {((a * b) / 3):.2f}")
+        
+
+ 
+        
+        
+        
+        
+        
+        
+    
+
+
+
+time.sleep(10)
+main()
         
 
 
@@ -519,42 +627,8 @@ if operation == 17:
             
                 
                 
-                
-                
-            
-            
+      
         
-           
-                
-                
-                
-                
-                
-
-
-
-           # height = float(input("enter the length of adjacent"))
-          #  hypo = float(input("enter the length of hypotenuse"))
-        # angle = int(input(f"enter the length of Angle {trig1}"))
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
